@@ -1,0 +1,18 @@
+{
+  "payments": [
+    {
+      "id": "b25b218f-faff-484d-9691-561c6f63f4a1",
+      "title": "Tarte Nesrine",
+      "cost": "1200 Dinars",
+      "paid": "1200 Dinars",
+      "date": "2022-01-03"
+    },
+    {
+      "id": "b99a13ce-eedb-4d5e-ac9e-d8503680ec28",
+      "title": "Chaise de bureau",
+      "cost": "9000 Dinars",
+      "paid": "4000 Dinars",
+      "date": "2022-01-04"
+    }
+  ]
+}
