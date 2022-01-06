@@ -2,15 +2,22 @@
   "name": "account-manager",
   "version": "0.1.0",
   "private": true,
+  "main": "src/services/api.js",
   "scripts": {
-    "serve": "vue-cli-service serve | json-server --watch db.json",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "nodemon src/services/api.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "body-parser": "^1.19.1",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
     "json-server": "^0.17.0",
+    "mongodb": "^4.2.2",
+    "mongoose": "^6.1.5",
     "uuid": "^8.3.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
