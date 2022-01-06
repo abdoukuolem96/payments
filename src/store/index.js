@@ -17,6 +17,7 @@ export default createStore({
     },
     DELETE_PAYMENT(state, pay) {
       let index = state.payments.indexOf(pay)
+      state.currentPayment = {}
       state.payments.splice(index, 1)
     },
   },
@@ -25,9 +26,9 @@ export default createStore({
       payment.cost = payment.cost + ' Dinars'
       payment.paid = payment.paid + ' Dinars'
       PaymentService.postPayment(payment)
-        .then(() => {
+        .then((res) => {
+          payment._id = res.data.id
           commit('ADD_PAYMENT', payment)
-          // this.$router.push
         })
         .catch((err) => {
           console.log(err)
@@ -48,13 +49,11 @@ export default createStore({
         .catch((err) => console.log(err))
     },
     deletePayment({ commit }, payment) {
-      console.log(payment)
       PaymentService.deletePayment(payment)
         .then(() => {
           commit('DELETE_PAYMENT', payment)
         })
         .catch((err) => {
-          console.log(payment)
           console.log(err)
         })
     },

@@ -5,7 +5,7 @@
     <div id="date">{{ payment.date }}</div>
     <button id="delete" @click="confirmDelete(payment)">DELETE</button>
     <router-link
-      :to="{ name: 'BillingDetails', params: { id: payment.id } }"
+      :to="{ name: 'BillingDetails', params: { id: payment._id } }"
       id="details"
       >DETAILS</router-link
     >
@@ -52,7 +52,7 @@ export default {
   backdrop-filter: blur(4.5px);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #000000;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-family: 'Inconsolata';
   margin-bottom: 10px;
   box-sizing: border-box;

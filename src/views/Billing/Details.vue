@@ -24,13 +24,14 @@ export default {
   methods: {
     confirmDelete(payment) {
       let a = confirm('Are you sure ?')
-      if (a) this.deletePayment(payment)
+      if (a) {
+        this.deletePayment(payment)
+        this.$router.push({
+          name: 'Home',
+        })
+      }
     },
-    deletePayment(payment) {
-      console.log(payment)
-      let b = true
-      if (b === false) this.deletePayment(payment)
-    },
+
     ...mapActions(['deletePayment', 'getPayment']),
   },
   computed: {
@@ -66,7 +67,7 @@ export default {
   border-radius: 10px;
 
   color: #000000;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-family: Inconsolata;
 
   /* box-sizing: border-box; */

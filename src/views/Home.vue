@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <Billing v-for="payment in payments" :key="payment.id" :payment="payment" />
+    <Billing
+      v-for="payment in payments"
+      :key="payment._id"
+      :payment="payment"
+    />
   </div>
 </template>
 

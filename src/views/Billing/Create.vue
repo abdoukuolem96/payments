@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid'
 import { mapActions } from 'vuex'
 export default {
   data() {
@@ -32,9 +31,8 @@ export default {
   },
   methods: {
     createFreshPaymentObject() {
-      let id = uuidv4()
       return {
-        id: id,
+        id: '',
         title: '',
         cost: '',
         paid: '',
@@ -66,16 +64,15 @@ export default {
         }) +
         '-' +
         temp.getFullYear()
-      console.log(temp)
       this.payment.date = temp
-      const payment = {
-        ...this.payment,
-        id: uuidv4(),
-      }
+      const payment = { ...this.payment }
+
       this.addPayment(payment)
         .then(() => {
           this.payment = this.createFreshPaymentObject()
-          console.log(payment)
+          this.$router.push({
+            name: 'Home',
+          })
         })
         .catch((err) => {
           console.log(err)
@@ -94,7 +91,7 @@ button {
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
   transition: all 0.2s linear;

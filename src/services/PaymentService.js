@@ -6,7 +6,6 @@ const apiClient = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Origin': '*',
   },
 })
 
@@ -21,6 +20,6 @@ export default {
     return apiClient.post('/payments', payment)
   },
   deletePayment(payment) {
-    return apiClient.delete('/payments/' + payment.id)
+    return apiClient.delete('/payments/' + payment._id)
   },
 }
